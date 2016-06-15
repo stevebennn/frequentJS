@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // returns the specified number of characters starting from the left.
 String.prototype.left = function (num) {
@@ -23,6 +23,18 @@ String.prototype.lower = function () {
 // returns the string in uppercase.
 String.prototype.upper = function () {
     return this.toUpperCase();
+};
+
+// returns the specified number of characters in uppercase starting from the right.
+String.prototype.upperFrom = function (dir, num) {
+    switch (dir) {
+        case 'left':
+            return this.left(num).upper() + this.right(this.length - num);
+            break;
+        case 'right':
+            return this.left(this.length - num) + this.right(num).upper();
+            break;
+    }
 };
 
 // returns true or false if the string exists in the array passed.
