@@ -7,7 +7,7 @@ String.prototype.left = function (num) {
 
 // returns the specified number of characters starting from the right.
 String.prototype.right = function (num) {
-    return this.substr(-num);
+    return this.slice(this.length - num);
 };
 
 // returns the specified number of characters between the the starting and ending index.
@@ -27,12 +27,13 @@ String.prototype.upper = function () {
 
 // returns the specified number of characters in uppercase starting from the right.
 String.prototype.upperFrom = function (dir, num, num2) {
+
     switch (dir) {
         case 'left':
             return this.left(num).upper() + this.right(this.length - num);
             break;
         case 'mid':
-            return this.left(num - 1) + this.mid(num, num2).upper() + this.right(this.length - (num2 + 1));
+            return this.left(num - 1) + this.mid(num, num2).upper() + this.right(this.length - num2 - 1);
             break;
         case 'right':
             return this.left(this.length - num) + this.right(num).upper();
@@ -62,9 +63,5 @@ String.prototype.lookup = function (arr) {
         return arr[self];
     })[self];
 };
-
-var mystring = "stephen";
-
-console.log(mystring.upperFrom('mid', 3, 3));
 
 //# sourceMappingURL=frequentJS-compiled.js.map
