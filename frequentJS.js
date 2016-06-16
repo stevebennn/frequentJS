@@ -13,7 +13,7 @@ String.prototype.lower = function() { return this.toLowerCase() };
 // returns the string in uppercase.
 String.prototype.upper = function() { return this.toUpperCase() };
 
-// returns the specified number of characters in uppercase starting from the right.
+// returns the specified number of characters in uppercase starting from either the left,right or middle.
 String.prototype.upperFrom = function(dir,num,num2) {
     switch (dir){
         case 'left': return this.left(num).upper() + this.right(this.length-num);
