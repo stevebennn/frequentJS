@@ -23,7 +23,7 @@ String.prototype.upperFrom = function(dir,num,num2) {
         case 'right' : return this.left(this.length-num) + this.right(num).upper();
             break;
     }
-}
+};
 
 // returns true or false if the string exists in the array passed.
 String.prototype.exists = function(arr) { return arr.indexOf(this) != -1 };
@@ -31,12 +31,12 @@ String.prototype.exists = function(arr) { return arr.indexOf(this) != -1 };
 // returns the string truncated after character limit is met.
 String.prototype.truncate = function(num){
     return this.length > num ? this.left(num) + "..." : this;
-}
+};
 
 // returns an array using spaces as the delimiter.
 String.prototype.toArray = function() {
     return this.split(" ");
-}
+};
 
 // returns the value of a key in a array of object literals.
 String.prototype.lookup = function(arr) {
@@ -45,3 +45,6 @@ String.prototype.lookup = function(arr) {
         return arr[self]
     })[self]
 };
+
+// returns the word specified by index ( does not use a 0 index )
+String.prototype.word = function(num) { return this.split(" ")[num-1]; };

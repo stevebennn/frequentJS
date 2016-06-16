@@ -25,7 +25,7 @@ String.prototype.upper = function () {
     return this.toUpperCase();
 };
 
-// returns the specified number of characters in uppercase starting from the right.
+// returns the specified number of characters in uppercase starting from either the left,right or middle.
 String.prototype.upperFrom = function (dir, num, num2) {
     switch (dir) {
         case 'left':
@@ -61,6 +61,11 @@ String.prototype.lookup = function (arr) {
     return arr.find(function (arr) {
         return arr[self];
     })[self];
+};
+
+// returns the word specified by index ( does not use a 0 index )
+String.prototype.word = function (num) {
+    return this.split(" ")[num - 1];
 };
 
 //# sourceMappingURL=frequentJS-compiled.js.map
