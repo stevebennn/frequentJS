@@ -14,9 +14,11 @@ String.prototype.lower = function() { return this.toLowerCase() };
 String.prototype.upper = function() { return this.toUpperCase() };
 
 // returns the specified number of characters in uppercase starting from the right.
-String.prototype.upperFrom = function(dir,num) {
+String.prototype.upperFrom = function(dir,num,num2) {
     switch (dir){
         case 'left': return this.left(num).upper() + this.right(this.length-num);
+            break;
+        case 'mid' : return this.left(num-1) + this.mid(num,num2).upper() + this.right(this.length-(num2+1));
             break;
         case 'right' : return this.left(this.length-num) + this.right(num).upper();
             break;
@@ -43,3 +45,8 @@ String.prototype.lookup = function(arr) {
         return arr[self]
     })[self]
 };
+
+
+let mystring = "stephen";
+
+console.log(mystring.upperFrom('mid',3,3));
