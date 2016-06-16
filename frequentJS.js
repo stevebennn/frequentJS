@@ -15,7 +15,6 @@ String.prototype.upper = function() { return this.toUpperCase() };
 
 // returns the specified number of characters in uppercase starting from the right.
 String.prototype.upperFrom = function(dir,num,num2) {
-
     switch (dir){
         case 'left': return this.left(num).upper() + this.right(this.length-num);
             break;
