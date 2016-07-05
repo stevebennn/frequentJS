@@ -1,24 +1,16 @@
 'use strict';
 
 // returns the specified number of characters starting from the left.
-String.prototype.left = function (num) {
-    return this.slice(0, num);
-};
+// String.prototype.left = function(num) { return this.slice(0,num) };
 
 // returns the specified number of characters starting from the right.
-String.prototype.right = function (num) {
-    return this.slice(this.length - num);
-};
+// String.prototype.right = function(num) { return this.slice(this.length-num) };
 
 // returns the specified number of characters between the the starting and ending index.
-String.prototype.mid = function (sNum, eNum) {
-    return this.substring(eNum + sNum - 1, sNum - 1);
-};
+// String.prototype.mid = function(sNum,eNum) { return this.substring((eNum+sNum-1),(sNum-1)) };
 
 // returns the string in lowercase.
-String.prototype.lower = function () {
-    return this.toLowerCase();
-};
+// String.prototype.lower = function() { return this.toLowerCase() };
 
 // returns the string in uppercase.
 String.prototype.upper = function () {
@@ -67,5 +59,43 @@ String.prototype.lookup = function (arr) {
 String.prototype.word = function (num) {
     return this.split(" ")[num - 1];
 };
+
+var fq = function () {
+
+    var methods = {};
+    var _arg = "";
+
+    methods.val = _arg;
+
+    // snagging the value we want to manipulate
+    methods.request = function (arg) {
+        this.val = arg;
+        return this;
+    };
+
+    //
+    methods.left = function (num) {
+        this.val = this.val.slice(0, num);
+        return this;
+    };
+
+    methods.right = function (num) {
+        this.val = this.val.slice(0, num);
+        return this;
+    };
+
+    methods.mid = function (sNum, eNum) {
+        this.val = this.val.substring(eNum + sNum - 1, sNum - 1);
+        return this;
+    };
+
+    methods.val = function () {
+        return this.val;
+    };
+
+    return methods;
+}();
+
+console.log(fq.request('asdf').mid(2, 2).left(1).val);
 
 //# sourceMappingURL=frequentJS-compiled.js.map
