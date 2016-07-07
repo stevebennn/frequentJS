@@ -1,5 +1,7 @@
 # frequentJS
-do you hate remembering silly crap? me too.....
+Do you hate remembering silly crap? me too.....
+
+Fun little library filled with tons of `helpful().chainable().methods()` to make your day better! ;)
 
 ####.right()
 returns the specified number of characters starting from the right.
