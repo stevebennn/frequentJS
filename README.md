@@ -1,7 +1,7 @@
-# frequentJS
-Do you hate remembering silly crap? me too.....
+# FrequentJS
+Are you lazy? Do you hate remembering silly crap? Me too! See....We already have so much in common :D!
 
-Fun little library filled with tons of `helpful().chainable().methods()` to make your day better! ;)
+FrequentJS is a fun little library filled with tons of `helpful().chainable().methods()` to make your day easier.
 
 ####.right()
 returns the specified number of characters starting from the right.
